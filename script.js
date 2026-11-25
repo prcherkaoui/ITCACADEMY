@@ -19,7 +19,7 @@ if(tl){
  tl.insertAdjacentHTML('beforeend','<small>Nos sites :</small>');SITES.forEach(o=>chip(o,0));
  tl.insertAdjacentHTML('beforeend','<span class="sep"></span>');
  */
- tl.insertAdjacentHTML('beforeend','<small>Formulaires :</small>');FORMS.forEach(o=>chip(o,1));
+ FORMS.forEach(o=>chip(o,1));
 }
 // ===== FORMATIONS (liste modifiable) =====
 const FORM=[
