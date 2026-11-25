@@ -1,0 +1,16 @@
+{
+  "name": "itcacademy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js && node --check inscriptions-store.js && node --check script.js && node --check inscriptions-ui.js && node --check i18n-darija.js",
+    "lint": "node --check server.js && node --check inscriptions-store.js && node --check script.js && node --check inscriptions-ui.js && node --check i18n-darija.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0"
+  }
+}

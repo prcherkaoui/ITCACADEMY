@@ -1,19 +1,34 @@
-# ITCAcademy
+# ITCACADEMY — www.itcacademy.online
 
-Site web du centre de formation à distance ITCAcademy (HTML, CSS, JavaScript).
+Site web officiel du centre de formation à distance **ITCACADEMY** (Informatique et Communication).
 
-## Fichiers
-- `index.html` : la page
-- `style.css` : le style
-- `script.js` : le code (liens du haut, formations, slider, devis PDF, WhatsApp)
-- `logo.jpg`, `logo-full.jpg`, `poster.jpg` : images
-- `video.mp4` : la vidéo de la page d'accueil
+## Fichiers principaux
+- `index.html` : page d'accueil (carrousel, vidéo, formations, devis PDF + WhatsApp, contact, traduction Darija Marocaine 3D)
+- `inscription.html` : page dédiée au formulaire d'inscription (base JSON chiffrée AES-256-GCM + espace administrateur + export Excel `.xlsx`)
+- `style.css` : styles, thème clair/sombre, RTL Darija et bouton 3D
+- `script.js`, `i18n-darija.js`, `inscriptions-ui.js` : logique interactive
+- `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml` : configuration GitHub Pages pour `www.itcacademy.online`
+- `.github/workflows/deploy-pages.yml` : publication automatique sur GitHub Pages (fichiers statiques uniquement)
 
-## Mettre en ligne avec GitHub Pages
-1. Créez un dépôt sur GitHub et envoyez-y tous ces fichiers à la racine.
-2. Allez dans **Settings > Pages**.
-3. Dans **Source**, choisissez **Deploy from a branch**, puis la branche `main` et le dossier `/ (root)`.
-4. Votre site sera disponible à l'adresse `https://VOTRE-NOM.github.io/NOM-DU-DEPOT/`.
+## Publication directe sur GitHub Pages (`www.itcacademy.online`)
 
-## À personnaliser
-Dans `script.js` : les listes `SITES` et `FORMS` (liens du haut), `FORM` (formations) et les tarifs dans la fonction `calc`.
+### 1. Envoyer le code sur GitHub
+Poussez ce dépôt sur la branche `main` de votre dépôt GitHub. Le fichier `CNAME` (`www.itcacademy.online`) et le workflow `.github/workflows/deploy-pages.yml` sont déjà configurés.
+
+### 2. Activer GitHub Pages
+1. Dans votre dépôt GitHub, ouvrez **Settings → Pages**.
+2. Dans **Build and deployment → Source**, choisissez **GitHub Actions** (recommandé, utilise `.github/workflows/deploy-pages.yml`) ou **Deploy from a branch** (`main` / `/ (root)`).
+3. Dans **Custom domain**, vérifiez que `www.itcacademy.online` est renseigné puis cochez **Enforce HTTPS** dès que le certificat SSL est généré.
+
+### 3. Configurer les DNS de `itcacademy.online`
+Chez votre registraire de nom de domaine (Namecheap, OVH, Cloudflare, GoDaddy, etc.) :
+
+- **Pour `www.itcacademy.online` (CNAME)** :
+  - Type : `CNAME` | Nom / Host : `www` | Valeur : `<VOTRE-NOM-GITHUB>.github.io`
+- **Pour `itcacademy.online` (redirection vers `www.itcacademy.online`, enregistrements A)** :
+  - `185.199.108.153`
+  - `185.199.109.153`
+  - `185.199.110.153`
+  - `185.199.111.153`
+
+Une fois la propagation DNS terminée (quelques minutes à quelques heures), votre site sera directement accessible sur **https://www.itcacademy.online**.

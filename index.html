@@ -4,8 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ITCACADEMY – Formation à distance en informatique et communication</title>
+<meta name="description" content="Centre de formation à distance en informatique et communication : bureautique, développement web, WordPress, comptabilité, e-commerce et outils IA.">
+<link rel="canonical" href="https://www.itcacademy.online/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.itcacademy.online/">
+<meta property="og:title" content="ITCACADEMY – Formation à distance en informatique et communication">
+<meta property="og:description" content="Formations à distance en informatique, bureautique, développement web, comptabilité, e-commerce et intelligence artificielle avec suivi personnalisé.">
+<meta property="og:image" content="https://www.itcacademy.online/logo-full.jpg">
 <link rel="icon" href="logo.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&family=Cairo:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,16 +25,17 @@
   <a class="brand" href="#accueil">
    <img class="logoimg" src="logo.jpg" alt="ITCAcademy : Information, Technologie et Communication">
   </a>
+  <button id="langTg" type="button" class="lang-btn" aria-label="Traduire en Darija marocaine" aria-pressed="false">🇲🇦 الدارجة</button>
   <button id="burger" aria-label="Ouvrir le menu">☰</button>
   <nav id="menu">
    <!-- Remplacez les href par vos propres liens -->
    <a href="#accueil">Accueil</a>
    <a href="#video">Vidéo</a>
    <a href="#formations">Formations</a>
+   <a href="inscription.html">Inscription</a>
    <a href="#apropos">À propos</a>
    <a href="#devis">Devis</a>
    <a href="#contact">Contact</a>
-   <a href="#" id="lnk1">Mon lien 1</a>
    <button id="tg" aria-label="Changer de thème">◐</button>
   </nav>
  </div>
@@ -38,7 +46,7 @@
  <div class="slider" id="sl" aria-roledescription="carrousel">
   <!-- Diapo 1 -->
   <div class="slide on" style="--g:linear-gradient(135deg,#0a1330,#1b3a9e)">
-   <div><h1>Apprenez l'informatique, où que vous soyez</h1><p>Formations à distance en développement, réseaux et bureautique, avec un suivi personnalisé.</p><a class="btn" href="#formations" style="background:var(--am);border-color:var(--am);color:#1a1200">Voir les formations</a></div>
+   <div><h1>Apprenez l'informatique, où que vous soyez</h1><p>Formations à distance en développement web, bureautique, comptabilité et outils IA, avec un suivi personnalisé.</p><a class="btn" href="#formations" style="background:var(--am);border-color:var(--am);color:#1a1200">Voir les formations</a></div>
    <svg viewBox="0 0 320 240" fill="none" aria-hidden="true"><rect x="50" y="30" width="220" height="145" rx="10" fill="#0d1b4d" stroke="#5b8cff" stroke-width="3"/><rect x="62" y="42" width="196" height="121" rx="4" fill="#07102e"/><path d="M82 70l-16 16 16 16M238 70l16 16-16 16M165 62l-20 48" stroke="#22d3ee" stroke-width="5" stroke-linecap="round"/><path d="M20 188h280l-18 22H38z" fill="#2f6bff"/></svg>
   </div>
   <!-- Diapo 2 -->
@@ -48,7 +56,7 @@
   </div>
   <!-- Diapo 3 -->
   <div class="slide" style="--g:linear-gradient(135deg,#1c0f3d,#5b2dbf)">
-   <div><h1>Réseaux, cybersécurité et cloud</h1><p>Des parcours pratiques, animés par des formateurs, pour préparer votre carrière.</p><a class="btn" href="#formations" style="background:var(--am);border-color:var(--am);color:#1a1200">Découvrir</a></div>
+   <div><h1>Bureautique, développement web, IA et e-commerce</h1><p>Microsoft Office (Word, Excel, PowerPoint), HTML/CSS/JS, WordPress, comptabilité générale, maintenance informatique, anglais technique, français et outils de l'intelligence artificielle.</p><a class="btn" href="#formations" style="background:var(--am);border-color:var(--am);color:#1a1200">Découvrir</a></div>
    <svg viewBox="0 0 320 240" fill="none" aria-hidden="true"><g stroke="#b9a2ff" stroke-width="3"><path d="M160 60L70 150M160 60l90 90M70 150h180M160 60v60"/></g><circle cx="160" cy="60" r="24" fill="#ffb020"/><circle cx="70" cy="150" r="20" fill="#22d3ee"/><circle cx="250" cy="150" r="20" fill="#22d3ee"/><circle cx="160" cy="120" r="16" fill="#fff"/></svg>
   </div>
   <!-- Diapo 4 -->
@@ -94,7 +102,7 @@
  <form class="dv" id="dvf">
   <div class="r3">
    <input id="dn" placeholder="Nom et prénom" required aria-label="Nom et prénom">
-   <input id="dt" type="tel" placeholder="Téléphone / WhatsApp" required aria-label="Téléphone">
+   <input id="dt" type="tel" inputmode="tel" placeholder="N° WhatsApp obligatoire (ex. 0660 83 72 85)" required aria-label="Numéro de téléphone WhatsApp obligatoire">
    <input id="de" type="email" placeholder="E-mail" aria-label="E-mail">
   </div>
   <fieldset><legend>Formations souhaitées</legend><div class="opts" id="fopts"></div></fieldset>
@@ -108,6 +116,11 @@
     <label><input type="radio" name="mod" value="Présentiel"> Présentiel</label>
     <label><input type="radio" name="mod" value="Hybride"> Hybride</label></div></fieldset>
   </div>
+  <fieldset id="persSub" class="pers-sub" hidden>
+   <legend>Sous-menu – Formation personnalisée (cochez 2 à 3 formations)</legend>
+   <p class="pers-info" id="persInfo">Sélectionnez 2 à 3 formations pour composer votre parcours personnalisé.</p>
+   <div class="opts" id="popts"></div>
+  </fieldset>
   <div class="r3" style="margin-top:16px"><label style="display:grid;gap:6px"><span id="dhl" style="font-weight:700"></span><input id="dh" type="number" min="1" max="200" value="10" required></label></div>
   <textarea id="dm" rows="3" placeholder="Précisions (niveau, disponibilités, objectif...)" aria-label="Précisions"></textarea>
   <button class="btn" type="submit" style="margin-top:14px">Générer mon devis PDF</button>
@@ -141,7 +154,9 @@
 <footer><div class="wrap">
  <div class="fcols">
   <div><img class="logoimg" style="height:auto;width:min(260px,100%);margin-bottom:8px" src="logo-full.jpg" alt="ITCAcademy"><p style="color:var(--mut);max-width:30ch">Centre de formation à distance en informatique et communication.</p></div>
+  <!-- LIENS UTILES : décommentez et ajoutez vos liens plus tard
   <div><h4>Liens utiles</h4><a href="#">Lien 2</a><a href="#">Lien 3</a><a href="#">Lien 4</a></div>
+  -->
   <!-- RÉSEAUX SOCIAUX : décommentez et ajoutez vos liens plus tard
   <div><h4>Réseaux sociaux</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div>
   -->
@@ -156,5 +171,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="script.js"></script>
+<script src="i18n-darija.js"></script>
 </body>
 </html>
